@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 mo2-shortcut.py — Add MO2 as a Steam non-Steam shortcut by writing shortcuts.vdf
-Part of MO2 Linux Helper: https://github.com/yourusername/mo2-linux-helper
+Part of MO2 Linux Helper: https://github.com/Crowdrocker/mo2-linux-helper
 
 Usage:
   python3 mo2-shortcut.py [--exe PATH] [--start-dir DIR] [--proton VERSION] [--remove]

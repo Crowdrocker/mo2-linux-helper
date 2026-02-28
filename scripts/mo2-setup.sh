@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # mo2-setup.sh — Full MO2 + Proton setup for Arch Linux
-# Part of MO2 Linux Helper: https://github.com/yourusername/mo2-linux-helper
+# Part of MO2 Linux Helper: https://github.com/Crowdrocker/mo2-linux-helper
 # Usage: bash mo2-setup.sh [--mo2-path PATH] [--proton-ver VERSION] [--dry-run]
 
 set -euo pipefail

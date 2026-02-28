@@ -5,7 +5,7 @@ Thanks for wanting to contribute! Here's how to get started.
 ## Development Setup
 
 ```bash
-git clone https://github.com/yourusername/mo2-linux-helper.git
+git clone https://github.com/Crowdrocker/mo2-linux-helper.git
 cd mo2-linux-helper
 npm install
 npm run tauri dev   # starts hot-reload dev server

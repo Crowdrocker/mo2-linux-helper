@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # mo2-nxm.sh — Register nxm:// and nxms:// URI scheme handlers for MO2
-# Part of MO2 Linux Helper: https://github.com/yourusername/mo2-linux-helper
+# Part of MO2 Linux Helper: https://github.com/Crowdrocker/mo2-linux-helper
 
 set -euo pipefail
 

@@ -71,7 +71,7 @@ pub async fn get_latest_proton_ge() -> Result<String, String> {
 async fn get_latest_app_version() -> Result<String, String> {
     let client = reqwest::Client::new();
     let resp = client
-        .get("https://api.github.com/repos/yourusername/mo2-linux-helper/releases/latest")
+        .get("https://api.github.com/repos/Crowdrocker/mo2-linux-helper/releases/latest")
         .header("User-Agent", "mo2-linux-helper")
         .send()
         .await
