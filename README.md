@@ -48,7 +48,7 @@ A fully interactive desktop application for configuring Mod Organizer 2 (MO2) wi
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/mo2-linux-helper.git
+git clone https://github.com/Crowdrocker/mo2-linux-helper.git
 cd mo2-linux-helper
 
 # Install dependencies
@@ -229,7 +229,7 @@ MIT License - see LICENSE file for details
 
 ## Support
 
-- GitHub Issues: https://github.com/yourusername/mo2-linux-helper/issues
+- GitHub Issues: https://github.com/Crowdrocker/mo2-linux-helper/issues
 - Reddit: r/linux_gaming
 - Discord: Join our community server
 
