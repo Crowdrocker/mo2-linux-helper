@@ -1,0 +1,48 @@
+{
+  "name": "mo2-linux-helper",
+  "version": "2.0.0",
+  "description": "Automated Mod Organizer 2 setup tool for Arch Linux with Proton",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "lint": "eslint src --ext .jsx,.js",
+    "lint:fix": "eslint src --ext .jsx,.js --fix"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@tauri-apps/api": "^1.6.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.6.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "vite": "^5.4.1"
+  },
+  "keywords": [
+    "mod-organizer-2",
+    "linux",
+    "arch",
+    "proton",
+    "gaming",
+    "mods",
+    "nexusmods",
+    "tauri"
+  ],
+  "author": "MO2 Linux Helper Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/mo2-linux-helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/mo2-linux-helper/issues"
+  },
+  "homepage": "https://github.com/yourusername/mo2-linux-helper#readme"
+}
