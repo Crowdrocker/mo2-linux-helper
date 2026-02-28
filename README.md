@@ -1,138 +1,247 @@
 # MO2 Linux Helper
 
-<div align="center">
+A fully interactive desktop application for configuring Mod Organizer 2 (MO2) with Proton dependencies on Linux. Built with a cyberpunk industrial aesthetic, featuring scanline overlays, neon cyan and orange accents, and a mono terminal font.
 
-![MO2 Linux Helper](https://img.shields.io/badge/MO2-Linux%20Helper-00e5ff?style=for-the-badge&logo=linux&logoColor=white)
-![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
-![Tauri](https://img.shields.io/badge/Tauri-24C8DB?style=for-the-badge&logo=tauri&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
-**A desktop app that automates Mod Organizer 2 setup on Linux with Proton.**
-
-[Install](#installation) · [Features](#features) · [Screenshots](#screenshots) · [Contributing](#contributing)
-
-</div>
-
----
+![MO2 Linux Helper](https://img.shields.io/badge/version-1.0.0-cyan)
+![License](https://img.shields.io/badge/license-MIT-orange)
+![Platform](https://img.shields.io/badge/platform-Linux-green)
 
 ## Features
 
-- ⚡ **One-click MO2 setup** — installs MO2, Wine, winetricks dependencies automatically
-- 📦 **Dependency manager** — tracks and installs vcruntime, dotnet48, d3dcompiler, DXVK and more
-- 🎮 **Game-specific fixes** for 18+ games including:
-  - Cyberpunk 2077, Fallout 4, Skyrim SE/VR, Fallout 3/NV, Oblivion Remastered, Morrowind
-  - Starfield, Witcher 3, Elden Ring, Dark Souls Remastered, Baldur's Gate 3
-  - xEdit, Synthesis Patcher, BodySlide, NifSkope, LOOT
-- 🔗 **NXM link handler** — registers `nxm://` and `nxms://` URI schemes for 1-click Nexus installs
-- 🚀 **Non-Steam shortcut** — adds MO2 to Steam library with correct Proton launch options
-- 📦 **Flatpak support** — generates permission overrides and full manifest
-- 💾 **Portable instance detection** — scans for local `ModOrganizer.ini` files
-- 🔌 **Native plugin support** — manages `libgame_*.so` Linux-native game plugins
-- ⌨️ **Backend scripts** — generates and runs real shell/Python scripts
-- 🔄 **Auto-update checker** — notifies when new MO2 or Proton-GE versions are available
-- 💾 **Config persistence** — all settings saved locally
+### Core Functionality
+- **Auto-install MO2 + Proton dependencies** - Automated setup of Mod Organizer 2 with all required dependencies
+- **NXM link handler setup** - One-click registration of Nexus Mods link handler
+- **Game fixes for 18+ titles** - Pre-configured fixes for Cyberpunk 2077, Fallout series, Skyrim, Baldur's Gate 3, and more
+- **Flatpak support** - Full Flatpak configuration with permission management
+- **Non-Steam shortcut adder** - Generate Steam shortcuts for MO2 and games
+- **Portable instance detection** - Automatically discover and manage portable MO2 instances
+- **Native plugin management** - Install and update libgame_*.so plugins for Linux-native games
+
+### Supported Games
+- Cyberpunk 2077
+- Fallout 4 / Fallout 3 / Fallout: New Vegas
+- Skyrim Special Edition / Skyrim VR
+- Baldur's Gate 3
+- Starfield
+- The Witcher 3
+- Dark Souls Remastered
+- Elden Ring
+- BodySlide
+- NifSkope
+- xEdit
+- Synthesis
+- LOOT
+- Oblivion Remastered
+- Morrowind
+
+### User Interface
+- **Dark industrial cyberpunk theme** - Scanline overlay, neon accents, mono terminal font
+- **Animated terminal output** - Real-time command execution visualization
+- **Progress tracking** - Visual progress bars and status indicators
+- **Config persistence** - All settings saved to localStorage with export/import
+- **Toast notifications** - Instant feedback on actions
+- **Responsive design** - Works on various screen sizes
 
 ## Installation
 
-### AUR (Arch Linux) — Recommended
+### From Source
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/mo2-linux-helper.git
+cd mo2-linux-helper
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+### AUR Package (Arch Linux)
 
 ```bash
 yay -S mo2-linux-helper
-# or
-paru -S mo2-linux-helper
 ```
 
-### Pre-built Binary
-
-Download the latest `.AppImage` or `.deb` from [Releases](https://github.com/Crowdrocker/mo2-linux-helper/releases).
+### Flatpak
 
 ```bash
-chmod +x mo2-linux-helper_*.AppImage
-./mo2-linux-helper_*.AppImage
-```
-
-### Build from Source
-
-**Prerequisites:** Node.js 20+, Rust 1.77+, `webkit2gtk`, `libayatana-appindicator`
-
-```bash
-git clone https://github.com/Crowdrocker/mo2-linux-helper.git
-cd mo2-linux-helper
-npm install
-npm run tauri build
-```
-
-## Requirements
-
-| Dependency | Version | Notes |
-|---|---|---|
-| Arch Linux | any | Other distros partially supported |
-| Steam | latest | Required for Proton |
-| Proton-GE | 9-20+ | Recommended over stock Proton |
-| wine | 9.x+ | For non-Steam prefix |
-| winetricks | 20240105+ | Dependency installer |
-| protontricks | 1.11+ | Proton prefix management |
-
-Install dependencies:
-```bash
-sudo pacman -S wine winetricks
-yay -S protontricks proton-ge-custom
+flatpak install flathub com.modorganizer.MO2LinuxHelper
 ```
 
 ## Usage
 
-### First Run
+### Setup Wizard
 
-1. Launch the app
-2. Go to **Setup Wizard**
-3. Verify your paths (MO2, Steam, Proton version)
-4. Click **⚡ Run Full Setup**
+1. Launch the application
+2. Follow the setup wizard to configure paths
+3. Choose between full installation or dry-run mode
+4. Watch the animated terminal output as MO2 is installed
+
+### Dependencies Management
+
+- View status of all required dependencies
+- Install individual or batch dependencies
+- Monitor installation progress with spinners
 
 ### Game Fixes
 
-Navigate to **Game Fixes**, enable the games you mod, and the appropriate Proton environment variables and compatibility patches will be applied automatically when launching MO2.
+- Toggle game-specific fixes on/off
+- Filter games by category (RPG, Action, Tools)
+- Search for specific games
+- Apply all fixes with one click
 
 ### NXM Links
 
-Go to **NXM Links** → **Register Handler**. After registering, clicking "Mod Manager Download" on NexusMods will open directly in MO2.
+- Register/unregister NXM link handler
+- Preview generated .desktop file
+- Download or copy configuration
+
+### Non-Steam Shortcuts
+
+- Add MO2 and games to Steam
+- Configure launch options
+- Generate VDF files automatically
+
+### Flatpak Configuration
+
+- Toggle Flatpak permissions
+- Generate override commands
+- Download Flatpak manifest
 
 ### Portable Instances
 
-If you use portable MO2 instances (with a local `ModOrganizer.ini`), go to **Portable Instances** and scan your games directory. Each instance can be launched independently.
+- Scan for portable MO2 instances
+- Launch instances directly
+- Remove unwanted instances
+
+### Native Plugins
+
+- Install libgame_*.so plugins
+- Update all plugins at once
+- Monitor plugin status
+
+### Backend Scripts
+
+- View all shell and Python scripts
+- Copy, download, or run scripts directly
+- Full syntax highlighting
 
 ## Backend Scripts
 
-The app generates real, executable scripts you can use independently:
+The application includes several backend scripts that can be used independently:
 
-| Script | Purpose |
-|---|---|
-| `mo2-setup.sh` | Full automated setup |
-| `mo2-nxm.sh` | NXM handler registration |
-| `mo2-shortcut.py` | Steam shortcuts.vdf writer |
-| `mo2-flatpak-setup.sh` | Flatpak overrides |
+### mo2-setup.sh
+Main installation script for MO2 and dependencies.
 
-Scripts are installed to `/usr/lib/mo2-linux-helper/scripts/` and symlinked to `/usr/bin/`.
+```bash
+chmod +x backend-scripts/mo2-setup.sh
+./backend-scripts/mo2-setup.sh
+```
 
-## Screenshots
+### mo2-nxm.sh
+NXM link handler setup script.
 
-> Coming soon
+```bash
+chmod +x backend-scripts/mo2-nxm.sh
+./backend-scripts/mo2-nxm.sh
+```
+
+### mo2-shortcut.py
+Steam shortcut generator.
+
+```bash
+python3 backend-scripts/mo2-shortcut.py
+```
+
+### mo2-flatpak-setup.sh
+Flatpak configuration script.
+
+```bash
+chmod +x backend-scripts/mo2-flatpak-setup.sh
+./backend-scripts/mo2-flatpak-setup.sh
+```
+
+## Configuration
+
+All configuration is stored in `localStorage` and can be exported/imported:
+
+- MO2 installation path
+- Proton path
+- Steam path
+- Active game fixes
+- Portable instances
+- Native plugins
+- Flatpak permissions
+
+## Development
+
+### Project Structure
+
+```
+mo2-linux-helper/
+├── src/
+│   ├── components/     # Reusable components
+│   ├── pages/         # Page components
+│   ├── utils/         # Utility functions
+│   ├── hooks/         # Custom React hooks
+│   ├── App.jsx        # Main application
+│   └── App.css        # Cyberpunk theme
+├── backend-scripts/   # Shell and Python scripts
+├── public/            # Static assets
+└── package.json
+```
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+### Creating Desktop App
+
+To package as an Electron or Tauri application:
+
+```bash
+# Electron
+npm install --save-dev electron
+npm run build:electron
+
+# Tauri
+npm install --save-dev @tauri-apps/cli
+npm run tauri build
+```
 
 ## Contributing
 
-PRs welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
-
-Areas that need help:
-- Testing on non-Arch distros (Fedora, Ubuntu)
-- Additional game profiles
-- Wayland-specific fixes
-- Steam Deck support
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+MIT License - see LICENSE file for details
 
-## Credits
+## Acknowledgments
 
-- [Mod Organizer 2](https://github.com/ModOrganizer2/modorganizer) — the modding tool this wraps
-- [Proton-GE](https://github.com/GloriousEggroll/proton-ge-custom) — the Proton build we recommend
-- The Linux gaming community on [r/linux_gaming](https://reddit.com/r/linux_gaming)
+- Mod Organizer 2 team for the amazing mod manager
+- Proton-GE for enabling Windows games on Linux
+- The Linux gaming community for support and feedback
+
+## Support
+
+- GitHub Issues: https://github.com/yourusername/mo2-linux-helper/issues
+- Reddit: r/linux_gaming
+- Discord: Join our community server
+
+## Roadmap
+
+- [ ] Auto-update checker (GitHub releases API)
+- [ ] Mod profile export/import
+- [ ] Enhanced error handling
+- [ ] More game fixes
+- [ ] Plugin marketplace integration
+- [ ] Cloud sync for configurations
+
+---
+
+Made with ❤️ for the Linux gaming community
