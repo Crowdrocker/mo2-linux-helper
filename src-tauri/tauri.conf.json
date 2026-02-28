@@ -74,7 +74,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/yourusername/mo2-linux-helper/releases/latest/download/latest.json"
+        "https://github.com/Crowdrocker/mo2-linux-helper/releases/latest/download/latest.json"
       ],
       "dialog": true,
       "pubkey": "YOUR_TAURI_UPDATE_PUBKEY_HERE"
