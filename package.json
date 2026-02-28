@@ -39,10 +39,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/mo2-linux-helper.git"
+    "url": "https://github.com/Crowdrocker/mo2-linux-helper.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/mo2-linux-helper/issues"
+    "url": "https://github.com/Crowdrocker/mo2-linux-helper/issues"
   },
-  "homepage": "https://github.com/yourusername/mo2-linux-helper#readme"
+  "homepage": "https://github.com/Crowdrocker/mo2-linux-helper#readme"
 }
