@@ -6,7 +6,7 @@ pkgver=2.0.0
 pkgrel=1
 pkgdesc="Automated Mod Organizer 2 setup tool for Arch Linux with Proton support"
 arch=('x86_64')
-url="https://github.com/yourusername/mo2-linux-helper"
+url="https://github.com/Crowdrocker/mo2-linux-helper"
 license=('MIT')
 depends=(
     'webkit2gtk'
