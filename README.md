@@ -44,7 +44,7 @@ paru -S mo2-linux-helper
 
 ### Pre-built Binary
 
-Download the latest `.AppImage` or `.deb` from [Releases](https://github.com/yourusername/mo2-linux-helper/releases).
+Download the latest `.AppImage` or `.deb` from [Releases](https://github.com/Crowdrocker/mo2-linux-helper/releases).
 
 ```bash
 chmod +x mo2-linux-helper_*.AppImage
@@ -56,7 +56,7 @@ chmod +x mo2-linux-helper_*.AppImage
 **Prerequisites:** Node.js 20+, Rust 1.77+, `webkit2gtk`, `libayatana-appindicator`
 
 ```bash
-git clone https://github.com/yourusername/mo2-linux-helper.git
+git clone https://github.com/Crowdrocker/mo2-linux-helper.git
 cd mo2-linux-helper
 npm install
 npm run tauri build
