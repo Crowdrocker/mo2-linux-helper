@@ -53,7 +53,7 @@ cargo install tauri-cli --version "^2"
 
 ```bash
 # Clone
-git clone https://github.com/yourusername/mo2-linux-helper
+git clone https://github.com/Crowdrocker/mo2-linux-helper
 cd mo2-linux-helper
 
 # Install JS deps
