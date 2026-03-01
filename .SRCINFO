@@ -2,7 +2,7 @@ pkgbase = mo2-linux-helper-git
 	pkgdesc = Interactive GUI for configuring Mod Organizer 2 with Proton/Wine on Linux
 	pkgver = r1.0000000
 	pkgrel = 1
-	url = https://github.com/yourusername/mo2-linux-helper
+	url = https://github.com/Crowdrocker/mo2-linux-helper
 	arch = x86_64
 	license = GPL3
 	makedepends = rust
@@ -26,7 +26,7 @@ pkgbase = mo2-linux-helper-git
 	optdepends = steam: Non-Steam shortcut integration
 	provides = mo2-linux-helper
 	conflicts = mo2-linux-helper
-	source = mo2-linux-helper-git::git+https://github.com/yourusername/mo2-linux-helper.git
+	source = mo2-linux-helper-git::git+https://github.com/Crowdrocker/mo2-linux-helper.git
 	sha256sums = SKIP
 
 pkgname = mo2-linux-helper-git
