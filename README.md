@@ -53,7 +53,7 @@ cargo install tauri-cli --version "^2"
 
 ```bash
 # Clone
-git clone https://github.com/yourusername/mo2-linux-helper
+git clone https://github.com/Crowdrocker/mo2-linux-helper
 cd mo2-linux-helper
 
 # Install JS deps
@@ -83,9 +83,10 @@ Build outputs land in:
 ```
 src-tauri/target/release/bundle/
 ├── appimage/   mo2-linux-helper_2.0.0_amd64.AppImage
-├── deb/        mo2-linux-helper_2.0.0_amd64.deb
-└── pacman/     mo2-linux-helper-2.0.0-1-x86_64.pkg.tar.zst
+└── deb/        mo2-linux-helper_2.0.0_amd64.deb
 ```
+
+> **Note:** Tauri v2 dropped the `pacman` bundler. For Arch, use the AppImage or install directly from the compiled binary at `src-tauri/target/release/mo2-linux-helper`.
 
 ---
 

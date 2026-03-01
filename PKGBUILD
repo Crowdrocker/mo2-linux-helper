@@ -6,7 +6,7 @@ pkgver=r1.0000000
 pkgrel=1
 pkgdesc="Interactive GUI for configuring Mod Organizer 2 with Proton/Wine on Linux"
 arch=('x86_64')
-url="https://github.com/yourusername/mo2-linux-helper"
+url="https://github.com/Crowdrocker/mo2-linux-helper"
 license=('GPL3')
 depends=(
   'webkit2gtk-4.1'
@@ -35,7 +35,7 @@ makedepends=(
 )
 provides=('mo2-linux-helper')
 conflicts=('mo2-linux-helper')
-source=("$pkgname::git+https://github.com/yourusername/mo2-linux-helper.git")
+source=("$pkgname::git+https://github.com/Crowdrocker/mo2-linux-helper.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -53,21 +53,17 @@ prepare() {
 build() {
   cd "$pkgname"
 
-  # Set Tauri environment so it doesn't try to download anything
   export TAURI_SKIP_DEVSERVER_CHECK=true
   export NODE_ENV=production
 
-  # Build frontend first
   npm run build
-
-  # Build Tauri/Rust backend → produces AppImage, .deb, .pacman bundles
-  cargo tauri build --bundles pacman,appimage
+  cargo tauri build --bundles deb,appimage
 }
 
 package() {
   cd "$pkgname"
 
-  # ── Binary ──────────────────────────────────────────────────────────────────
+  # ── Binary (extracted from the build output) ─────────────────────────────
   install -Dm755 "src-tauri/target/release/mo2-linux-helper" \
     "$pkgdir/usr/bin/mo2-linux-helper"
 

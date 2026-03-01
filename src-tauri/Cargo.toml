@@ -4,7 +4,7 @@ version = "2.0.0"
 description = "MO2 Linux Helper — Proton/Wine configuration tool for Mod Organizer 2"
 authors = ["MO2 Linux Helper Contributors"]
 license = "GPL-3.0"
-repository = "https://github.com/yourusername/mo2-linux-helper"
+repository = "https://github.com/Crowdrocker/mo2-linux-helper"
 edition = "2021"
 rust-version = "1.77"
 

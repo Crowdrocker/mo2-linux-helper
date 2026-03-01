@@ -45,9 +45,6 @@
       },
       "appimage": {
         "bundleMediaFramework": true
-      },
-      "pacman": {
-        "depends": ["webkit2gtk-4.1", "gtk3"]
       }
     }
   },
