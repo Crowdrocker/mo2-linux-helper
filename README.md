@@ -1,247 +1,169 @@
-# MO2 Linux Helper
-
-A fully interactive desktop application for configuring Mod Organizer 2 (MO2) with Proton dependencies on Linux. Built with a cyberpunk industrial aesthetic, featuring scanline overlays, neon cyan and orange accents, and a mono terminal font.
-
-![MO2 Linux Helper](https://img.shields.io/badge/version-1.0.0-cyan)
-![License](https://img.shields.io/badge/license-MIT-orange)
-![Platform](https://img.shields.io/badge/platform-Linux-green)
-
-## Features
-
-### Core Functionality
-- **Auto-install MO2 + Proton dependencies** - Automated setup of Mod Organizer 2 with all required dependencies
-- **NXM link handler setup** - One-click registration of Nexus Mods link handler
-- **Game fixes for 18+ titles** - Pre-configured fixes for Cyberpunk 2077, Fallout series, Skyrim, Baldur's Gate 3, and more
-- **Flatpak support** - Full Flatpak configuration with permission management
-- **Non-Steam shortcut adder** - Generate Steam shortcuts for MO2 and games
-- **Portable instance detection** - Automatically discover and manage portable MO2 instances
-- **Native plugin management** - Install and update libgame_*.so plugins for Linux-native games
-
-### Supported Games
-- Cyberpunk 2077
-- Fallout 4 / Fallout 3 / Fallout: New Vegas
-- Skyrim Special Edition / Skyrim VR
-- Baldur's Gate 3
-- Starfield
-- The Witcher 3
-- Dark Souls Remastered
-- Elden Ring
-- BodySlide
-- NifSkope
-- xEdit
-- Synthesis
-- LOOT
-- Oblivion Remastered
-- Morrowind
-
-### User Interface
-- **Dark industrial cyberpunk theme** - Scanline overlay, neon accents, mono terminal font
-- **Animated terminal output** - Real-time command execution visualization
-- **Progress tracking** - Visual progress bars and status indicators
-- **Config persistence** - All settings saved to localStorage with export/import
-- **Toast notifications** - Instant feedback on actions
-- **Responsive design** - Works on various screen sizes
-
-## Installation
-
-### From Source
-
-```bash
-# Clone the repository
-git clone https://github.com/Crowdrocker/mo2-linux-helper.git
-cd mo2-linux-helper
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-### AUR Package (Arch Linux)
-
-```bash
-yay -S mo2-linux-helper
-```
-
-### Flatpak
-
-```bash
-flatpak install flathub com.modorganizer.MO2LinuxHelper
-```
-
-## Usage
-
-### Setup Wizard
-
-1. Launch the application
-2. Follow the setup wizard to configure paths
-3. Choose between full installation or dry-run mode
-4. Watch the animated terminal output as MO2 is installed
-
-### Dependencies Management
-
-- View status of all required dependencies
-- Install individual or batch dependencies
-- Monitor installation progress with spinners
-
-### Game Fixes
-
-- Toggle game-specific fixes on/off
-- Filter games by category (RPG, Action, Tools)
-- Search for specific games
-- Apply all fixes with one click
-
-### NXM Links
-
-- Register/unregister NXM link handler
-- Preview generated .desktop file
-- Download or copy configuration
-
-### Non-Steam Shortcuts
-
-- Add MO2 and games to Steam
-- Configure launch options
-- Generate VDF files automatically
-
-### Flatpak Configuration
-
-- Toggle Flatpak permissions
-- Generate override commands
-- Download Flatpak manifest
-
-### Portable Instances
-
-- Scan for portable MO2 instances
-- Launch instances directly
-- Remove unwanted instances
-
-### Native Plugins
-
-- Install libgame_*.so plugins
-- Update all plugins at once
-- Monitor plugin status
-
-### Backend Scripts
-
-- View all shell and Python scripts
-- Copy, download, or run scripts directly
-- Full syntax highlighting
-
-## Backend Scripts
-
-The application includes several backend scripts that can be used independently:
-
-### mo2-setup.sh
-Main installation script for MO2 and dependencies.
-
-```bash
-chmod +x backend-scripts/mo2-setup.sh
-./backend-scripts/mo2-setup.sh
-```
-
-### mo2-nxm.sh
-NXM link handler setup script.
-
-```bash
-chmod +x backend-scripts/mo2-nxm.sh
-./backend-scripts/mo2-nxm.sh
-```
-
-### mo2-shortcut.py
-Steam shortcut generator.
-
-```bash
-python3 backend-scripts/mo2-shortcut.py
-```
-
-### mo2-flatpak-setup.sh
-Flatpak configuration script.
-
-```bash
-chmod +x backend-scripts/mo2-flatpak-setup.sh
-./backend-scripts/mo2-flatpak-setup.sh
-```
-
-## Configuration
-
-All configuration is stored in `localStorage` and can be exported/imported:
-
-- MO2 installation path
-- Proton path
-- Steam path
-- Active game fixes
-- Portable instances
-- Native plugins
-- Flatpak permissions
-
-## Development
-
-### Project Structure
-
-```
-mo2-linux-helper/
-├── src/
-│   ├── components/     # Reusable components
-│   ├── pages/         # Page components
-│   ├── utils/         # Utility functions
-│   ├── hooks/         # Custom React hooks
-│   ├── App.jsx        # Main application
-│   └── App.css        # Cyberpunk theme
-├── backend-scripts/   # Shell and Python scripts
-├── public/            # Static assets
-└── package.json
-```
-
-### Building for Production
-
-```bash
-npm run build
-```
-
-### Creating Desktop App
-
-To package as an Electron or Tauri application:
-
-```bash
-# Electron
-npm install --save-dev electron
-npm run build:electron
-
-# Tauri
-npm install --save-dev @tauri-apps/cli
-npm run tauri build
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Acknowledgments
-
-- Mod Organizer 2 team for the amazing mod manager
-- Proton-GE for enabling Windows games on Linux
-- The Linux gaming community for support and feedback
-
-## Support
-
-- GitHub Issues: https://github.com/Crowdrocker/mo2-linux-helper/issues
-- Reddit: r/linux_gaming
-- Discord: Join our community server
-
-## Roadmap
-
-- [ ] Auto-update checker (GitHub releases API)
-- [ ] Mod profile export/import
-- [ ] Enhanced error handling
-- [ ] More game fixes
-- [ ] Plugin marketplace integration
-- [ ] Cloud sync for configurations
+# ⬡ MO2 Linux Helper
+
+> Dark industrial cyberpunk GUI for configuring Mod Organizer 2 on Linux with Proton/Wine.
+
+![Arch Linux](https://img.shields.io/badge/Arch-Linux-1793D1?logo=arch-linux&logoColor=white)
+![Tauri](https://img.shields.io/badge/Tauri-2.x-FFC131?logo=tauri)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![Rust](https://img.shields.io/badge/Rust-1.77+-CE422B?logo=rust)
+![License](https://img.shields.io/badge/license-GPL--3.0-blue)
 
 ---
 
-Made with ❤️ for the Linux gaming community
+## Features
+
+- **Setup Wizard** — Animated terminal output, progress bar, MO2 path config, dry-run mode
+- **Dependency Manager** — Real-time detection of Proton-GE, protontricks, wine, DXVK, vkd3d, etc.
+- **Game Fixes** — Toggle patches for 18 games via protontricks (Cyberpunk, Fallout, Skyrim, BG3, xEdit...)
+- **NXM Links** — Register/unregister `nxm://` handler, live `.desktop` preview
+- **Non-Steam Shortcut** — Write directly to Steam's `shortcuts.vdf` via Python + `vdf` library
+- **Flatpak Config** — Permission toggles with live-generated override command
+- **Portable Instances** — Scan filesystem for `ModOrganizer.ini`, launch with one click
+- **Native Plugins** — Detect `libgame_*.so` plugins in MO2's plugins/ directory
+- **Backend Scripts** — Real shell/Python scripts with Copy/Download buttons
+- **Flatpak Manifest** — Complete `.yml` ready for Flathub submission
+- **Auto-update Check** — Pings GitHub for new Proton-GE versions
+
+---
+
+## Requirements
+
+- Arch Linux (or any distro with AUR access)
+- Rust 1.77+ (`rustup`)
+- Node.js 18+ + npm
+- Tauri CLI v2
+
+```bash
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Install Tauri system deps (Arch)
+sudo pacman -S webkit2gtk-4.1 gtk3 libayatana-appindicator
+
+# Install Node deps
+npm install
+
+# Install Tauri CLI
+cargo install tauri-cli --version "^2"
+```
+
+---
+
+## Development
+
+```bash
+# Clone
+git clone https://github.com/yourusername/mo2-linux-helper
+cd mo2-linux-helper
+
+# Install JS deps
+npm install
+
+# Run in dev mode (hot reload)
+cargo tauri dev
+# or
+npm run tauri:dev
+```
+
+---
+
+## Build
+
+```bash
+# Release build (produces AppImage, .deb, .pacman in src-tauri/target/release/bundle/)
+cargo tauri build
+# or
+npm run tauri:build
+
+# Debug build
+npm run tauri:build:debug
+```
+
+Build outputs land in:
+```
+src-tauri/target/release/bundle/
+├── appimage/   mo2-linux-helper_2.0.0_amd64.AppImage
+├── deb/        mo2-linux-helper_2.0.0_amd64.deb
+└── pacman/     mo2-linux-helper-2.0.0-1-x86_64.pkg.tar.zst
+```
+
+---
+
+## Install (Arch)
+
+```bash
+# From built .pkg.tar.zst
+sudo pacman -U src-tauri/target/release/bundle/pacman/mo2-linux-helper-2.0.0-1-x86_64.pkg.tar.zst
+```
+
+Or install the companion scripts manually:
+
+```bash
+sudo install -Dm755 scripts/mo2-setup.sh     /usr/bin/mo2-setup
+sudo install -Dm755 scripts/mo2-nxm.sh       /usr/bin/mo2-nxm
+sudo install -Dm755 scripts/mo2-shortcut.py  /usr/bin/mo2-shortcut
+sudo install -Dm755 scripts/mo2-flatpak-setup.sh /usr/bin/mo2-flatpak-setup
+```
+
+---
+
+## AUR
+
+An AUR package `mo2-linux-helper-git` is planned. Until then, clone and build above.
+
+---
+
+## Optional Python dep (for Non-Steam shortcut)
+
+```bash
+pip install vdf
+```
+
+---
+
+## Project Structure
+
+```
+mo2-linux-helper/
+├── src/                    # React frontend
+│   ├── main.jsx            # Entry point
+│   └── App.jsx             # Main UI (all sections)
+├── src-tauri/              # Tauri/Rust backend
+│   ├── src/
+│   │   └── main.rs         # All Tauri commands (invoke handlers)
+│   ├── Cargo.toml
+│   └── tauri.conf.json     # App config + shell permissions
+├── scripts/                # Standalone bash/python scripts
+│   ├── mo2-setup.sh
+│   ├── mo2-nxm.sh
+│   ├── mo2-shortcut.py
+│   └── mo2-flatpak-setup.sh
+├── package.json
+├── vite.config.js
+└── index.html
+```
+
+---
+
+## Tauri Commands (Rust → Frontend)
+
+| Command | Description |
+|---|---|
+| `check_dependencies` | Detect all deps (Proton-GE, wine, protontricks...) |
+| `install_dependency` | Install a dep via pacman/pipx/protonup |
+| `run_setup` | Full MO2 setup wizard |
+| `set_nxm_handler` | Register/unregister nxm:// handler |
+| `apply_game_fix` | Apply protontricks fix for a specific game |
+| `write_steam_shortcut` | Write Non-Steam shortcut via Python vdf |
+| `apply_flatpak_overrides` | Apply flatpak permission overrides |
+| `scan_portable_instances` | Scan filesystem for ModOrganizer.ini |
+| `scan_native_plugins` | Find libgame_*.so in MO2 plugins/ |
+| `check_for_updates` | Check GitHub for new Proton-GE version |
+| `launch_mo2_instance` | Launch a portable MO2 instance |
+| `open_in_files` | Open path in system file manager |
+
+---
+
+## License
+
+GPL-3.0 — Contributions welcome. PRs for more game fixes especially appreciated.

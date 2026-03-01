@@ -1,0 +1,109 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MO2 Linux Helper",
+  "version": "2.0.0",
+  "identifier": "com.modorganizer.mo2-linux-helper",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "MO2 Linux Helper",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true,
+        "transparent": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "linux": {
+      "deb": {
+        "depends": ["libwebkit2gtk-4.1-0", "libgtk-3-0"]
+      },
+      "appimage": {
+        "bundleMediaFramework": true
+      },
+      "pacman": {
+        "depends": ["webkit2gtk-4.1", "gtk3"]
+      }
+    }
+  },
+  "plugins": {
+    "shell": {
+      "open": true,
+      "scope": [
+        {
+          "name": "bash",
+          "cmd": "bash",
+          "args": true,
+          "sidecar": false
+        },
+        {
+          "name": "python3",
+          "cmd": "python3",
+          "args": true,
+          "sidecar": false
+        },
+        {
+          "name": "protontricks",
+          "cmd": "protontricks",
+          "args": true,
+          "sidecar": false
+        },
+        {
+          "name": "flatpak",
+          "cmd": "flatpak",
+          "args": true,
+          "sidecar": false
+        },
+        {
+          "name": "xdg-mime",
+          "cmd": "xdg-mime",
+          "args": true,
+          "sidecar": false
+        },
+        {
+          "name": "update-desktop-database",
+          "cmd": "update-desktop-database",
+          "args": true,
+          "sidecar": false
+        },
+        {
+          "name": "steam",
+          "cmd": "steam",
+          "args": true,
+          "sidecar": false
+        }
+      ]
+    },
+    "fs": {
+      "scope": {
+        "allow": ["$HOME/**", "/mnt/**", "/media/**", "/tmp/**"],
+        "deny": []
+      }
+    }
+  }
+}

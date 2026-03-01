@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MO2 Linux Helper
+GenericName=Mod Organizer 2 Configuration Tool
+Comment=Configure Mod Organizer 2 with Proton/Wine on Linux
+Exec=mo2-linux-helper
+Icon=com.modorganizer.MO2LinuxHelper
+Terminal=false
+Categories=Game;Utility;
+Keywords=modding;wine;proton;steam;fallout;skyrim;cyberpunk;
+StartupWMClass=mo2-linux-helper
