@@ -106,7 +106,7 @@ pub fn fetch_latest_release(owner: &str, repo: &str) -> Result<GithubRelease, St
 // ─── INDIVIDUAL UPDATE CHECKERS ──────────────────────────────────────────────
 
 pub fn check_app_update(current_version: &str) -> Result<UpdateInfo, String> {
-    let release = fetch_latest_release("yourusername", "mo2-linux-helper")?;
+    let release = fetch_latest_release("Crowdrocker", "mo2-linux-helper")?;
     let latest = release.tag_name.trim_start_matches('v').to_string();
 
     // Find the linux .AppImage asset
